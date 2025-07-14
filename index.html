@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>自販機に大量のカエル</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="marquee-wrap">
+    <marquee>☆ようこそ！ホームページへ☆</marquee>
+  </div>
+
+  <div class="nav-wrapper">
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="house.html">曾祖父ハウス</a></li>
+        <li><a href="meisyo.html">観光名所</a></li>
+        <li><a href="access.html">アクセス</a></li>
+        <li><a href="about.html">自己紹介</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="wrap" class="clearfix">
+    <header>
+      <h1>PM5:30にスーパーが閉まる町　土佐町田井</h1>
+    </header>
+    <main>
+      <div class="main-visual">
+        <img src="images/hasi simekiri.jpg" alt="画像">
+      </div>
+
+      <div id="counter-area" style="text-align:center; font-size: 24px; margin-top: 30px;">
+        あなたは <span id="counter">???</span> 人目の訪問者です！✨
+      </div>
+      
+      <script>
+        // ローカルストレージにカウントを保存
+        let count = localStorage.getItem('page_counter');
+        if (!count) {
+          count = 1;
+        } else {
+          count = parseInt(count) + 1;
+        }
+        localStorage.setItem('page_counter', count);
+      
+        // 表示
+        document.getElementById('counter').textContent = count;
+      
+        // キリ番表示（例：100, 500, 1000など）
+        const kiribanList = [100, 200, 300, 500, 1000];
+        if (kiribanList.includes(count)) {
+          alert(`🎉おめでとうございます！キリ番 ${count} を踏みました！🎉`);
+        }
+      </script>
+      
+      <section>
+        <h2>このサイトとは？</h2>
+        <p>これを閲覧する人は夜が来てもネオンで街は煌々とする街、福岡に住んでいる人がほとんどであろう。
+          <br>しかし、ここ土佐町田井は違う。夜が来ると真っ暗闇に包まれる。福岡の街では経験することも少ない圧倒的「黒」だ。<br>
+          そして、スーパーはPM5:30に閉まる。そのため、昼寝をしているとスーパーに行きそびれてしまう。
+          <br>
+          そんな生活を考えたことはあるだろうか？<br>
+          ない人がほとんどだろう。しかし、ここ土佐町田井ではそれが日常だ。
+          <br> 私からすれば普通かもしれないことが、誰かにとって面白いものになるかもしれない。そんな思いでこのページを作成した。
+          <br>
+          <br>
+          ここでは、土佐町田井の観光名所やアクセス方法、そして曾祖父の家について紹介していく。
+          <br>おもしろおかしく紹介していくので、読んでほしい。
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 和田</p>
+  </footer>
+
+</body>
+</html>
